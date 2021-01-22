@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../css/workbook.css">
+        <script src="../../js/resizeIFrames.js"></script>
+    </head>
+    <body>
+        <div class="container container--outer"><div class="maincolumn">
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Tracking Values</h1>
+		</header>
+		<div class="content post__content clearfix">
+
+<p>
+    The main use of console.log is to check on certain values or write messages that
+    indicate if the code has gone through a certain point. We can do that much more easily
+    using the Log Message option when editing a breakpoint. This will create a logpoint.
+</p>
+
+<img src="../../images/editB2.png" width="700">
+
+<p>
+    Using the logpoint, we can type in a message at any point in the code. <b>NOTE:</b> 
+    we cannot set a breakpoint on top of a logpoint. If there is an expression or hit count set, it will
+    override the logpoint and no message will appear.
+</p>
+
+<p>
+    With the logpoint you can also print values as you would using console.log by adding {} around
+    your variables.
+</p>
+
+<img src="../../images/logpoint.PNG" width="700">
+
+<h2>Box (Exercise): Logging</h2>
+
+<p>
+    Below is the same program as before but it is in 4-1.js. Let us add the following logpoint
+    to line 23:
+</p>
+
+<p>
+    <code>red: {r}, green: {g}, blue: {b}</code>
+</p>
+
+<p>
+    When we run this, it will log the values of r, g, and b. You can read this by looking at
+    the debug console on the lower tab of VS Code, or by pressing Ctrl + Shift + i on the page and look at the console there.
+    If we made this logpoint somewhere inside the loop, say on line 27, it will log the rgb values
+    on each iteration.
+</p>
+
+<iframe src="../../for_students/4-1.html" width="100%" height="100%" scrolling="no" frameborder="0" 
+    style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+
+<h3>Watching Values</h3>
+
+<p>
+    In the debug tab, there are three sections: <b>Variables, Watch, </b> and <b> Call Stack</b>.
+    We already talked about the call stack, but not the other two. 
+</p>
+
+<p>
+    <b>Variables</b> contains all the variables currently saved while running your program. If we set
+    a breakpoint on line 24 of 4-1.js and run the debugger, we can find the variables the rgb values.
+    <b>You can also directly modify values of variables while debugging at a breakpoint</b>.
+</p>
+
+<img src="../../images/variables.PNG" width="200">
+
+<p>
+    <b>Watch</b> holds the variables we wish to constantly track. If we right click on a variable
+    in <b>Variables</b>, we can Add to Watch. Try adding the 3 rgb values to Watch. If we keep continuing at
+    at that breakpoint on line 24, we can see the values shift on each iteration.
+</p>
+
+<h2 id="summary-two-apis">Summary</h2>
+
+<p>
+    Essentially you can still log messages and values in the console when you need. Hopefully
+    doing it this way will prove to be faster also leave less of a mess behind when you no longer need
+    the log messages. Also watching values should prove to be useful since you don't have to constantly log
+    values at various points in time during your code.
+</p>
+
+		</div>
+	</article>
+</main>
+
+</div>
+<div class="sidebar">
+<h2 class="Side_Title">Debugging Workbook</h2>
+<p class="Side__Note">Pages:</p>
+<ul class="Side__List">
+    <li class="Side__Item Side__Unselected"><a href="../../">Index (Debugging)</a></li>
+    <li class="Side__Item Side__Unselected"> <a href="../1/">1: Getting Started </a></li>
+    <li class="Side__Item Side__Unselected"> <a href="../2/">2: Stepping </a></li>
+    <li class="Side__Item Side__Unselected"> <a href="../3/">3: Conditional Statements </a></li>
+    <li class="Side__Item Side__Selected">4: Tracking Values </li>
+</ul>
+</div>
+</div>
+    </body>
+</html>

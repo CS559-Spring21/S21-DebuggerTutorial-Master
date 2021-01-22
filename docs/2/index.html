@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../css/workbook.css">
+        <script src="../../js/resizeIFrames.js"></script>
+    </head>
+    <body>
+        <div class="container container--outer"><div class="maincolumn">
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Stepping</h1>
+		</header>
+		<div class="content post__content clearfix">
+
+<p>
+    From the last page we saw how to continue to the next breakpoint, but there
+    are some other things we to progress through our code in the debugger bar.
+</p>
+
+<img src="../../images/debugger bar.PNG" width="700">
+
+<p>
+    From the bar you can do the following things:
+</p>
+
+<ul>
+    <li>
+        <b>Continue/Pause:</b> Continues to the next breakpoint or end of program. Pauses the program
+        if it is continuously running in say an animation loop.
+    </li>
+    <li>
+        <b>Step Over:</b> Goes to the immediate next line of code.
+    </li>
+    <li>
+        <b>Step In:</b> Goes into the next line in a function if applicable, otherwise goes to the immediate
+        next line of code
+    </li>
+    <li>
+        <b>Step Out:</b> Goes out of the function it is currently in and continues to next line
+    </li>
+    <li>
+        <b>Restart:</b> Refreshes the page
+    </li>
+    <li>
+        <b>Stop:</b> Ends debugging and closes the window
+    </li>
+</ul>
+
+<h2>Box (Exercise): Stepping</h2>
+
+<p>
+    Below is a canvas with a green square. You can find the javascript in 2-1.js. Let's set a breakpoint
+    on line 23 and run the debugger.
+</p>
+
+<iframe src="../../for_students/2-1.html" width="100%" height="100%" scrolling="no" frameborder="0" 
+    style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+
+<p>
+    If we step over, we will get a pink square and if we step over against, we will get the green square.
+    You will notice that the debugger simply goes to the next line of code regardless what happens in the function.
+</p>
+
+<p>
+    Lets restart step in this time. Now you will see that the debugger goes into func1(), and if you keep stepping in,
+    we will go into func3(), complete it, go back into func1(), complete it, and then the same for func2(). You will see
+    that we drew a blue square, and pink square, and a green square in the order.
+</p>
+
+<p>
+    Lets restart and step into func3() again. This time step out as soon as we get into func3(). You will see that it immediately
+    completes the function and goes back into func1() and draw the blue square. If we were to step out after immediately entering func1(),
+    we will not see the blue square because the pink square is also immedately drawn after. Essentially, step out finishes the current function and continues
+    to the next line after the function call. You can tell where we will continue from by looking at the <b>Call Stack</b> in the debugger bar.
+</p>
+
+<h2>Summary</h2>
+
+<p>
+    These are the basics of how to step through your programs. Feel free to play around with this some more if
+    you are not entirely sure how this works. 
+</p>
+
+<a href="../../docs/3/" class="Next__Page">Next: Conditional Statements</a>
+
+		</div>
+	</article>
+</main>
+
+</div>
+<div class="sidebar">
+<h2 class="Side_Title">Debugging Workbook</h2>
+<p class="Side__Note">Pages:</p>
+<ul class="Side__List">
+    <li class="Side__Item Side__Unselected"><a href="../../">Index (Debugging)</a></li>
+    <li class="Side__Item Side__Unselected"> <a href="../1/">1: Getting Started </a></li>
+    <li class="Side__Item Side__Selected"> 2: Stepping </li>
+    <li class="Side__Item Side__Unselected"> <a href="../3/">3: Conditional Statements </a></li>
+    <li class="Side__Item Side__Unselected"> <a href="../4/">4: Tracking Values </a></li>
+</ul>
+</div>
+</div>
+    </body>
+</html>

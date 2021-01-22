@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../css/workbook.css">
+        <script src="../../js/resizeIFrames.js"></script>
+    </head>
+    <body>
+        <div class="container container--outer"><div class="maincolumn">
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Conditional Statements</h1>
+		</header>
+		<div class="content post__content clearfix">
+
+<p>
+    With breakpoints, you can also set them to stop your program on certain conditions.
+</p>
+
+<p>
+    If you right click on a breakpoint you've made, you can edit the breakpoint as well as
+    remove it or enable/disable it. 
+</p>
+
+<img src="../../images/editB1.png" width="700">
+
+<p>
+    When you are editing a breakpoint, you can set it to Expression which will make the breakpoint
+    only stop the program if the condition you set is met at the breakpoint. Make sure you hit Enter
+    after setting your expression to save the breakpoint conditional. You can also hit Esc to cancel.
+</p>
+
+<img src="../../images/editB2.png" width="700">
+
+<h2>Box (Exercise): Conditional Statements</h2>
+
+<p>
+    Below is a canvas with a green square, but if you look at 3-1.js, you will see that
+    there is a for loop that keeps drawing a different colored square. Lets set a breakpoint
+    on line 24 and run the debugger. 
+</p>
+
+<p>
+    Nothing should appear when on the canvas at the breakpoint. If we keep continuing,
+    We will first see a reddish square that slowly changes colors.
+</p>
+
+<p>
+    Now edit that breakpoint and go to Expression. Set it to <code>g == 100</code>.
+    This will make it so that the breakpoint only stops the program when g == 100. You
+    should see a brownish square when the debugger pauses then. If we continue, it should jump to
+    the end and we'll get the green square again.
+</p>
+
+<iframe src="../../for_students/3-1.html" width="100%" height="100%" scrolling="no" frameborder="0" 
+    style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+    
+<p>
+    You can also try this with other expressions. Anything you can write in an if statements you can write
+    in the Expression. Also try using other values such as the r value or the i value.
+</p>
+
+<h3>Hit Count</h3>
+
+<p>
+    You will notice that below the Expression option, you can also select Hit Count. Hit count basically
+    makes it so that the breakpoint will pause the program when a breakpoint has been reached a certain number of
+    times. However when you refresh the page, it will remember the count from before so if you set it to something like
+    <code>%100</code>, It will pause the program at g == 99, g == 199, and then when you refresh, it will pause at
+    g == 44, g == 144...
+</p>
+
+<p>
+    To reset, you have to rerun the debugger. It can be handy at times but Expression should be mostly enough.
+</p>
+
+<h2 id="summary-two-apis">Summary</h2>
+
+<p>
+    We have the power to set the breakpoints to only activate when we want them to. This can save us
+    a lot of time when we only want the program to stop on when a specific value is reached.
+</p>
+
+<a href="../../docs/4/" class="Next__Page">Next: Tracking Values</a>
+
+		</div>
+	</article>
+</main>
+
+</div>
+<div class="sidebar">
+<h2 class="Side_Title">Debugging Workbook</h2>
+<p class="Side__Note">Pages:</p>
+<ul class="Side__List">
+    <li class="Side__Item Side__Unselected"><a href="../../">Index (Debugging)</a></li>
+    <li class="Side__Item Side__Unselected"> <a href="../1/">1: Getting Started </a></li>
+    <li class="Side__Item Side__Unselected"> <a href="../2/">2: Stepping </a></li>
+    <li class="Side__Item Side__Selected">3: Conditional Statements </li>
+    <li class="Side__Item Side__Unselected"> <a href="../4/">4: Tracking Values </a></li>
+</ul>
+</div>
+</div>
+    </body>
+</html>
