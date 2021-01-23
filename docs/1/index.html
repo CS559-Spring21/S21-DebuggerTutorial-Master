@@ -21,12 +21,16 @@
 </p>
 
 <p>
-    For this, it would be 1-1.html -> 127.0.0.1:[port] -> for_students -> 1-1.js
+    For the exercise box at the bottom of this page, it would be:
+</p>
+
+<p>
+    <code>1-1.html -> 127.0.0.1:[port] -> for_students -> 1-1.js</code>
 </p>
 
 <p>
     If you are fine with using the debugger in Chrome, you can skip to the exercise at the bottom
-    and go from there. 
+    and go from there. But in my opinion, the debugger in VS Code looks much nicer.
 </p>
 
 <h3>Setting up</h3>
@@ -44,15 +48,32 @@
 
 <p> 
     Run the live server for your page (It should already be running for this
-    Debugger WB)
+    Debugger WB).
 </p>
 
+<p>
+    The next step depends on whether you are working on a single folder
+    or are working in a workspace. (Generally speaking, a workspace will have multiple folders)
+</p>
+
+<h3>If working in a single folder</h3>
+
+<p>
+    Click on the run/debug tab to the left. Click on <b>Run and Debug</b>.
+</p>
+
+<img src="../../images/run and debug.PNG" width="300">
+
+<h3>If working in a workspace</h3>
+
 <p> 
-    Next, click on the run tab to the left. Go to the top and click the scrolldown.
+    Click on the run/debug tab to the left. Go to the top and click the scrolldown.
     Click on 'Add Config (Debugging WB)'.
 </p>
 
-<img src="../../images/add config.png" width="700">
+<img src="../../images/add config.png" width="300">
+
+<h3>The steps after should be the same</h3>
 
 <p>
     It will then ask you to select an environment, in which you will just select what 
@@ -63,8 +84,8 @@
 <img src="../../images/select environment.png" width="700">
 
 <p> 
-    Now this 'launch.json' file should open up and it can be found in the vscode folder
-    of this WB. We need to modify the url so that the port matches the one we are using
+    Now this <code>launch.json</code> file should open up and it can be found in the newly added <code>.vscode</code> folder
+    of this workbook. We need to modify the url so that the port matches the one we are using
     for the live server. After that, we are done with setting up the debugger for VS Code.
 </p>
 
@@ -84,7 +105,7 @@
 
 <p>
     Now lets set some breakpoints. Below is a canvas with four squares. 
-    The javascript for this can be found in 1-1.js. You will see that there are
+    The javascript for this can be found in <code>1-1.js</code>. You will see that there are
     four functions and each gets called to draw a square. To the left of the line
     number for any line, you can click to add a breakpoint, or click again to remove it.
 </p>
