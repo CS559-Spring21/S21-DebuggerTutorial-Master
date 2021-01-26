@@ -38,23 +38,27 @@
 <h2>Box (Exercise): Logging</h2>
 
 <p>
-    Below is the same program as before but it is in <code>4-1.js</code>. Let us add the following logpoint
-    to line 23:
-</p>
-
-<p>
-    <code>red: {r}, green: {g}, blue: {b}</code>
-</p>
-
-<p>
-    When we run this, it will log the values of r, g, and b. You can read this by looking at
-    the debug console on the lower tab of VS Code, or by pressing Ctrl + Shift + i on the page and look at the console there.
-    If we made this logpoint somewhere inside the loop, say on line 27, it will log the rgb values
-    on each iteration.
+    Below is a square going in circle which can be found in <code>4-1.js</code>.
 </p>
 
 <iframe src="../../for_students/4-1.html" width="100%" height="100%" scrolling="no" frameborder="0" 
     style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+
+<p>
+    Let us add the following logpoint to line 40:
+</p>
+
+<p>
+    <code>Square Info: {square}</code>
+</p>
+
+<p>
+    When we run this, it will log the values of the square. You can read this by looking at
+    the debug console on the lower tab of VS Code, or by pressing Ctrl + Shift + i on the page and look at the console there.
+    We can click the little carrot on the left of the variable in the debug console to see all it's values. It should look like this:
+</p>
+
+<img src="../../images/loginfo.PNG" width="700">
 
 <h3>Watching Values</h3>
 
@@ -64,25 +68,33 @@
 </p>
 
 <p>
-    <b>Variables</b> contains all the variables currently saved while running your program. If we set
-    a breakpoint on line 24 of 4-1.js and run the debugger, we can find the variables the rgb values.
-    <b>You can also directly modify values of variables while debugging at a breakpoint</b>.
+    <b>Variables</b> contains all the variables currently saved while running your program. If we pause our program
+    in the debugger, all the variables will show up. Variables will also show anytime we hit a breakpoint.
+    We can find the variables we want to observe in here and we can also modify it. Try modifying <code>t</code> 
+    after pausing the program and continue. You will notice that the square will jump position.
 </p>
 
 <img src="../../images/variables.PNG" width="200">
 
 <p>
     <b>Watch</b> holds the variables we wish to constantly track. If we right click on a variable
-    in <b>Variables</b>, we can Add to Watch. Try adding the 3 rgb values to Watch. If we keep continuing at
-    at that breakpoint on line 24, we can see the values shift on each iteration.
+    in <b>Variables</b>, we can 'Add to Watch'. Add the square to Watch. Anytime we pause the program, 
+    we can will see the square's information displayed in watch the same as how we logged it earlier.
 </p>
 
-<h2 id="summary-two-apis">Summary</h2>
+<p>
+    This program runs an animation loop in the <code>animate()</code> function. You can 
+    set a breakpoint on line 43 and keep continuing iteratively to see how the square changes
+    on each animation frame. Also feel free to try the things from the previous page on this page.
+    Things like expression and hit count conditional breakpoints to only pause the animation at certain times.
+</p>
+
+<h2>Summary</h2>
 
 <p>
     Essentially you can still log messages and values in the console when you need. Hopefully
-    doing it this way will prove to be faster also leave less of a mess behind when you no longer need
-    the log messages. Also watching values should prove to be useful since you don't have to constantly log
+    doing it this way will prove to be faster and also leave less of a mess compared to calling the console.log function. 
+    Also watching values should prove to be useful since you don't have to constantly log
     values at various points in time during your code.
 </p>
 

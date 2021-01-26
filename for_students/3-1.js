@@ -1,5 +1,5 @@
 
-function func1(context, color) {
+function drawSquare(context, color) {
     context.fillStyle = color;
     context.fillRect(10,10,80,80);
 }
@@ -24,6 +24,6 @@ window.onload = function() {
         g++;
         r--;
         let color = getColor(r, g, b);
-        func1(context, color);
+        drawSquare(context, color);
     }
 }

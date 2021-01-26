@@ -73,8 +73,18 @@
     Lets restart and step into func3() again. This time step out as soon as we get into func3(). You will see that it immediately
     completes the function and goes back into func1() and draw the blue square. If we were to step out after immediately entering func1(),
     we will not see the blue square because the pink square is also immedately drawn after. Essentially, step out finishes the current function and continues
-    to the next line after the function call. You can tell where we will continue from by looking at the <b>Call Stack</b> in the debugger bar.
+    to the next line after the function call.
 </p>
+
+<h3>The Call Stack</h3>
+
+<p>
+    You can tell where we will continue from by looking at the Call Stack in the debugger tab. The image below shows what
+    the Call Stack should look like when we step into func3(). We can see that func3() is at the top of the stack, and we can see that if we step out,
+    we will back into func1(), and then if we step out again we would be in the window.onload() function.
+</p>
+
+<img src="../../images/call stack.PNG" width="300">
 
 <h2>Summary</h2>
 
