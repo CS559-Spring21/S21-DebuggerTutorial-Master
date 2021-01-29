@@ -37,14 +37,16 @@
 
 <p>
     For this setup, we're going to be using Chrome but this also works with Firefox 
-    and other browsers as well.
+    as well as other browsers.
 </p>
 
 <p>
-    Install the debugger for Chrome
+    First, install the debugger for Chrome. You can find it by going to the extensions tab found
+    on the left of the VS Code window. Search up 'Debugger for Chrome' and install it.
+
 </p>
 
-<img src="../../images/debugger for chrome.png" width="700">
+<img src="../../images/debugger for chrome.png" width="650">
 
 <p> 
     Run the live server for your page (It should already be running for this
@@ -81,25 +83,40 @@
     the Debugger for Chrome, Chrome will not show up as an option.
 </p>
 
-<img src="../../images/select environment.png" width="700">
+<img src="../../images/select environment.png" width="650">
 
 <p> 
     Now this <code>launch.json</code> file should open up and it can be found in the newly added <code>.vscode</code> folder
     of this workbook. We need to modify the url so that the port matches the one we are using
-    for the live server. After that, we are done with setting up the debugger for VS Code.
+    for the live server.
 </p>
 
-<img src="../../images/change port.jpg" width="700">
+<img src="../../images/change port.jpg" width="650">
+
+<p>
+    We are now done with setting up the debugger for VS Code.
+</p>
+
+<p>
+    <b>Note:</b> we only have to do this once per folder. If you open up a folder that you already set up the debugger for,
+    the launch settings will be saved in <code>launch.json</code> in the <code>.vscode</code> folder.
+</p>
 
 <h3>Running the debugger</h3>
 
 <p>
     Now try running the debugger. It can only run when the live server is open.
-    It should open a new tab with your page. In VS Code, you should see this  debugger 
-    bar at the top.
+    You can run the debugger by click the arrow next to your launch tab.
 </p>
 
-<img src="../../images/debugger bar.PNG" width="700">
+<img src="../../images/start debugger.jpg" width="400">
+
+<p>
+    It should open a new window with your page site. In VS Code, you should see this debugger 
+    bar at the top of VS Code. You'll also notice that the bar at the bottom turns orange.
+</p>
+
+<img src="../../images/debugger bar.PNG" width="650">
 
 <h2>Box (Exercise): First breakpoints</h2>
 
@@ -114,7 +131,7 @@
     Lets add a breakpoint on each function (lines 27-30). 
 </p>
 
-<img src="../../images/breakpoints.png" width="700">
+<img src="../../images/breakpoints.png" width="650">
 
 <p>
     In the new window, go to this page. It should be paused in the debugger bar in VS Code.
