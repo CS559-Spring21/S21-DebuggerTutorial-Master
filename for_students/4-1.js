@@ -37,7 +37,7 @@ window.onload = function() {
 
     t += 5;
     updateSquare();
-    drawSquare;
+    drawSquare();
 
     let animate = () => {
         context.fillStyle = "White";
