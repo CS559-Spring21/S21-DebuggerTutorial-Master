@@ -58,13 +58,22 @@
     We can click the little carrot on the left of the variable in the debug console to see all it's values. It should look like this:
 </p>
 
+<p>
+    <b>Remember to refresh the page after adding the logpoint if you are already on it in the debugger window</b>
+</p>
+
 <img src="../../images/loginfo.PNG" width="650">
 
 <p>
     Here we logged the square before we entered the animation loop. If you were to put this same logpoint
     somewhere in the animation loop such as on line 43, you will notice that you will get swarmed by messages
     updating you on the values of the square. This may be useful, but there is much cleaner way to keep track of
-    certain values.
+    certain values shown below.
+</p>
+
+<p>
+    <b>Note: </b>if you add logpoints in this animation loop, you do not need to refresh that page
+    after it has already started running, because you will reach that breakpoint again.
 </p>
 
 <h3>Watching Values</h3>
