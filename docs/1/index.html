@@ -15,35 +15,19 @@
 		<div class="content post__content clearfix">
 
 <p>
-    I will start by saying that you don't have to use the debugger in VS Code, since Google Chrome's
-    devtools allow you to debug directly in the browser. If you press Ctrl + Shift + i and go to Sources, 
-    you can look for the js file you want to debug and directly add breakpoints to your code there.
-</p>
-
-<p>
-    For the exercise box at the bottom of this page, it would be:
-</p>
-
-<p>
-    <code>1-1.html -> 127.0.0.1:[port] -> for_students -> 1-1.js</code>
-</p>
-
-<p>
-    If you are fine with using the debugger in Chrome, you can skip to the exercise at the bottom
-    and go from there. But in my opinion, the debugger in VS Code looks much nicer.
+    This section will cover how to set up the debugger for this workbook as well as future workbooks and other
+    projects you may want to debug in the future.
 </p>
 
 <h3>Setting up</h3>
 
 <p>
-    For this setup, we're going to be using Chrome but this also works with Firefox 
-    as well as other browsers.
+    For this setup, we're going to be using Chrome but this also works with many other browsers.
 </p>
 
 <p>
     First, install the debugger for Chrome. You can find it by going to the extensions tab found
     on the left of the VS Code window. Search up 'Debugger for Chrome' and install it.
-
 </p>
 
 <img src="../../images/debugger for chrome.png" width="650">
@@ -54,11 +38,11 @@
 </p>
 
 <p>
-    The next step depends on whether you are working on a single folder
-    or are working in a workspace. (Generally speaking, a workspace will have multiple folders)
+    The next step may look a little different depending on whether or not you already have
+    debug launch configs set up for debugging.
 </p>
 
-<h3>If working in a single folder</h3>
+<h3>If there are no launch configs</h3>
 
 <p>
     Click on the run/debug tab to the left. Click on <b>Run and Debug</b>.
@@ -66,11 +50,11 @@
 
 <img src="../../images/run and debug.PNG" width="300">
 
-<h3>If working in a workspace</h3>
+<h3>If there are already launch configs</h3>
 
 <p> 
     Click on the run/debug tab to the left. Go to the top and click the scrolldown.
-    Click on 'Add Config (Debugging WB)'.
+    Click on 'Add Config (<code>[Name of Workbook]</code>)'.
 </p>
 
 <img src="../../images/add config.png" width="300">
@@ -79,7 +63,7 @@
 
 <p>
     It will then ask you to select an environment, in which you will just select what 
-    browser you use to open your page, which for this example will be Chrome. If you didn't install
+    browser you use to open your page, which for this example will be Chrome (It might be <code>Chrome (legacy)</code>). If you didn't install
     the Debugger for Chrome, Chrome will not show up as an option.
 </p>
 
@@ -99,14 +83,15 @@
 
 <p>
     <b>Note:</b> we only have to do this once per folder. If you open up a folder that you already set up the debugger for,
-    the launch settings will be saved in <code>launch.json</code> in the <code>.vscode</code> folder.
+    the launch settings will be saved in <code>launch.json</code> in the <code>.vscode</code> folder. This effects the entire folder, you don't
+    have to worry about doing this for each individual file.
 </p>
 
 <h3>Running the debugger</h3>
 
 <p>
     Now try running the debugger. It can only run when the live server is open.
-    You can run the debugger by click the arrow next to your launch tab.
+    You can run the debugger by clicking the arrow next to your launch tab.
 </p>
 
 <img src="../../images/start debugger.jpg" width="400">
@@ -134,9 +119,10 @@
 <img src="../../images/breakpoints.png" width="650">
 
 <p>
-    In the new window, go to this page. It should be paused in the debugger bar in VS Code.
-    If you set the breakpoints correctly, you will see that the canvas is empty. You can click on continue
-    on the debugger bar to go to the next breakpoint. You will notice
+    In the new debugger window, go to this page. It should be paused in the debugger bar in VS Code.
+    <b>If you were already on this page, refresh it so that the breakpoints activate.</b>
+    If you set the breakpoints correctly, you will see that the canvas is empty. You can click on 'continue'
+    in the debugger bar to go to the next breakpoint. You will notice
     that each square will appear as you continue as the code is paused at each breakpoint.
 </p>
 
@@ -150,18 +136,41 @@
 </p>
 
 <p>
-    At the bottom of the debug tab, there is a <b>Breakpoints</b> tab. If you hover over
+    At the bottom of the debug section, there is a <b>BREAKPOINTS</b> tab. If you hover over
     the tab, you will see 3 actions you can do, the one on the far right will allow you to instantly
     remove all breakpoints.
 </p>
 
-<img src="../../images/remove breakpoints.PNG" width="300">
+<img src="../../images/remove breakpoints.jpg" width="400">
+
+<h3>When do breakpoints activate?</h3>
+
+<p>
+    Breakpoints pause the program when the line of the breakpoint is reached. So if you have already reached the end
+    of the program and then you add a breakpoint, it won't do anything since you already went past the breakpoint, you would
+    have to refresh the page to reach it again.
+</p>
+
+<p>
+    A breakpoint can still activate if you add it after starting your program without having to refresh. This would
+    occur in things like mouse events or animation loops where functions may get called again after time has passed, and if you
+    placed a breakpoint in those repeated functions before it gets called, it will pause when it does. We will see more of this in <i>Section 4: Tracking Values</i>.
+</p>
+
+<h3>Too many windows?</h3>
+
+<p>
+    Right now, it seems like it takes 3 windows to debug: VS Code, the live server window, and the debugger window.
+    If this is too hard to cram on the screen, we can close out/ignore/minimize the live server window. The live server is running,
+    we can run the debugger irregardless of if the window is already open regularly. You could instead do everything in the debugger window.
+</p>
 
 <h2>Summary</h2>
     
 <p>
-    This was essentally how we setup the VS Code debugger to run. You can of course just use the Chrome devtools
-    if you prefer those, but going forward, it shouldn't matter which you use. Next we will look at stepping through our code. 
+    This was essentally how we setup the VS Code debugger to run. While just being able to pause a program
+    on a line may seem powerful on its own, there is much more that can be done.
+    Next we will look at stepping through our code. 
 </p>
 
 
@@ -176,7 +185,8 @@
 <h2 class="Side_Title">Debugging Workbook</h2>
 <p class="Side__Note">Pages:</p>
 <ul class="Side__List">
-    <li class="Side__Item Side__Unselected"><a href="../../">Index (Debugging)</a></li>
+    <li class="Side__Item Side__Unselected"> <a href="../../">Index (Debugging)</a></li>
+    <li class="Side__Item Side__Unselected"> <a href="../0/">0: Priliminaries </a></li>
     <li class="Side__Item Side__Selected"> 1: Getting Started </li>
     <li class="Side__Item Side__Unselected"> <a href="../2/">2: Stepping </a></li>
     <li class="Side__Item Side__Unselected"> <a href="../3/">3: Conditional Statements </a></li>

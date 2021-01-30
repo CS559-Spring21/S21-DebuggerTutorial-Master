@@ -54,11 +54,18 @@
 
 <p>
     When we run this, it will log the values of the square. You can read this by looking at
-    the debug console on the lower tab of VS Code, or by pressing Ctrl + Shift + i on the page and look at the console there.
+    the debug console on the lower tab of VS Code, or by pressing Ctrl + Shift + i on the page window and look at the console there.
     We can click the little carrot on the left of the variable in the debug console to see all it's values. It should look like this:
 </p>
 
 <img src="../../images/loginfo.PNG" width="650">
+
+<p>
+    Here we logged the square before we entered the animation loop. If you were to put this same logpoint
+    somewhere in the animation loop such as on line 43, you will notice that you will get swarmed by messages
+    updating you on the values of the square. This may be useful, but there is much cleaner way to keep track of
+    certain values.
+</p>
 
 <h3>Watching Values</h3>
 
@@ -70,7 +77,7 @@
 <p>
     <b>Variables</b> contains all the variables currently saved while running your program. If we pause our program
     in the debugger, all the variables will show up. Variables will also show anytime we hit a breakpoint.
-    We can find the variables we want to observe in here and we can also modify it. Try modifying <code>t</code> 
+    We can find the variables we want to observe in here and we <b>can also modify it</b>. Try modifying <code>t</code> 
     after pausing the program and continue. You will notice that the square will jump position.
 </p>
 
@@ -108,6 +115,7 @@
 <p class="Side__Note">Pages:</p>
 <ul class="Side__List">
     <li class="Side__Item Side__Unselected"><a href="../../">Index (Debugging)</a></li>
+    <li class="Side__Item Side__Unselected"> <a href="../0/">0: Priliminaries </a></li>
     <li class="Side__Item Side__Unselected"> <a href="../1/">1: Getting Started </a></li>
     <li class="Side__Item Side__Unselected"> <a href="../2/">2: Stepping </a></li>
     <li class="Side__Item Side__Unselected"> <a href="../3/">3: Conditional Statements </a></li>
