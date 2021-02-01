@@ -49,20 +49,49 @@
 </p>
 
 <p>
+    <code>Square Info: r: {square.r}, g: {square.g}, b: {square.b}, x: {square.x}, y: {square.y}</code>
+</p>
+
+<p>
+    Refresh the page and we will be able to see message logged at in the Debug Console in the lower tab
+    of VS Code. You can also see this logged in the Window as well if you press Ctrl + Shift + i and look at
+    the window there. The message should look like this.
+</p>
+
+<img src="../../images/loginfo1.PNG" width="650">
+
+<p>
+    This seems like a somewhat tedious thing to type though. So instead, we can try logging 
+    the square directly. Let's replace the logpoint message we made with this one below:
+</p>
+
+<p>
     <code>Square Info: {square}</code>
 </p>
 
 <p>
-    When we run this, it will log the values of the square. You can read this by looking at
-    the debug console on the lower tab of VS Code, or by pressing Ctrl + Shift + i on the page window and look at the console there.
+    When we run this, it will log the values of the square variable directly.
     We can click the little carrot on the left of the variable in the debug console to see all it's values. It should look like this:
 </p>
 
+<img src="../../images/loginfo2.PNG" width="650">
+
 <p>
-    <b>Remember to refresh the page after adding the logpoint if you are already on it in the debugger window</b>
+    You will notice that the values greyed out are the same but the ones below those are wrong. This might be because
+    we are logging an object, there may be a delay in how it logs the values. Meaning it may try log the square then,
+    but will finish logging after some of the animation has occurred. You will notice that those values change everytime we refresh.
 </p>
 
-<img src="../../images/loginfo.PNG" width="650">
+<p>
+    If we added a breakpoint on line 42, those values should be accurate since the code will pause before any changes happens
+    to the square, and it will accurately log the square at that time.
+</p>
+
+<p>
+    <b>Note: </b> this is also the same if we were to use the <code>console.log()</code> function.
+</p>
+
+<h3>Loops</h3>
 
 <p>
     Here we logged the square before we entered the animation loop. If you were to put this same logpoint
@@ -87,30 +116,36 @@
     <b>Variables</b> contains all the variables currently saved while running your program. If we pause our program
     in the debugger, all the variables will show up. Variables will also show anytime we hit a breakpoint.
     We can find the variables we want to observe in here and we <b>can also modify it</b>. Try modifying <code>t</code> 
-    after pausing the program and continue. You will notice that the square will jump position.
+    after pausing the program and continue. You will notice that the square will jump positions.
 </p>
 
-<img src="../../images/variables.PNG" width="200">
+<img src="../../images/variables.PNG" width="300">
 
 <p>
     <b>Watch</b> holds the variables we wish to constantly track. If we right click on a variable
-    in <b>Variables</b>, we can 'Add to Watch'. Add the square to Watch. Anytime we pause the program, 
-    we can will see the square's information displayed in watch the same as how we logged it earlier.
+    in <b>Variables</b>, we can 'Add to Watch'. Add the square to Watch. Anytime we stop the program (either by breakpoint or pause), 
+    we can see the square's information displayed in watch the same as how we logged it earlier. It should look something like this:
 </p>
+
+<img src="../../images/watch.PNG" width="300">
 
 <p>
     This program runs an animation loop in the <code>animate()</code> function. You can 
     set a breakpoint on line 43 and keep continuing iteratively to see how the square changes
-    on each animation frame. Also feel free to try the things from the previous page on this page.
-    Things like expression and hit count conditional breakpoints to only pause the animation at certain times.
+    on each animation frame.
+</p>
+
+<p>
+    Also feel free to try the things from the previous pages on this page
+    such as expressions and stepping.
 </p>
 
 <h2>Summary</h2>
 
 <p>
-    Essentially you can still log messages and values in the console when you need. Hopefully
-    doing it this way will prove to be faster and also leave less of a mess compared to calling the console.log function. 
-    Also watching values should prove to be useful since you don't have to constantly log
+    Essentially, you can still log messages and values in the console when you need to. Hopefully
+    doing it this way will prove to be faster and also leave less of a mess compared to calling the <code>console.log()</code> function. 
+    Also watching values should also be useful since you don't have to constantly log
     values at various points in time during your code.
 </p>
 

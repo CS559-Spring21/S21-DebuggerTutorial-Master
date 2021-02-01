@@ -20,9 +20,9 @@ window.onload = function() {
     let g = 0;
     let b = 0;
 
-    for(let i = 0; i < 255; i++) {
-        g++;
-        r--;
+    for(let i = 0; i < 255; i+=10) {
+        g+=10;
+        r-=10;
         let color = getColor(r, g, b);
         drawSquare(context, color);
     }

@@ -42,8 +42,15 @@
 </p>
 
 <p>
+    <b>Remember to refresh the page after adding breakpoints if you are already on it in the debugger window</b>
+</p>
+
+<iframe src="../../for_students/3-1.html" width="100%" height="100%" scrolling="no" frameborder="0" 
+    style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
+
+<p>
     Nothing should appear when on the canvas at the breakpoint. If we keep continuing,
-    We will first see a reddish square that slowly changes colors.
+    We will first see a red square that slowly transitions to green.
 </p>
 
 <p>
@@ -52,39 +59,18 @@
     should see a brownish square when the debugger pauses then. If we continue, it should jump to
     the end and we'll get the green square again.
 </p>
-
-<p>
-    <b>Remember to refresh the page after adding breakpoints if you are already on it in the debugger window</b>
-</p>
-
-<iframe src="../../for_students/3-1.html" width="100%" height="100%" scrolling="no" frameborder="0" 
-    style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
     
 <p>
     You can also try this with other expressions. Anything you can write in an <i>if statements</i> you can write
     in the Expression. Also try using other values such as the r value or the i value.
 </p>
 
-<!-- <h3>Hit Count</h3>
-
-<p>
-    You will notice that below the Expression option, you can also select Hit Count. Hit count basically
-    makes it so that the breakpoint will pause the program when a breakpoint has been reached a certain number of
-    times. However when you refresh the page, it will remember the count from before so if you set it to something like
-    <code>%100</code>, It will pause the program whenever the hit count % 100 == 0 (i.e. every 100th hit). 
-</p>
-
-<p>
-    This will pause the program at g == 99, g == 199, and then when you refresh, it will pause at
-    g == 44, g == 144... This is because after your program ends, hit count reaches 256 and then when you refresh and continue
-    the hit count will reach 300 after 44 more times over the line.
-</p> -->
-
 <h2 id="summary-two-apis">Summary</h2>
 
 <p>
     We have the power to set the breakpoints to only activate when we want them to. This can save us
-    a lot of time when we only want the program to stop when a specific value is reached.
+    a lot of time when we only want the program to stop when a specific value is reached rather than
+    constantly step until we get that value.
 </p>
 
 <a href="../../docs/4/" class="Next__Page">Next: Tracking Values</a>
