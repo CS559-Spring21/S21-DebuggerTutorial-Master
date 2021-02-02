@@ -19,6 +19,10 @@
     projects you may want to debug in the future.
 </p>
 
+<p>
+    I also recommend only having a single folder in your workspace being this one, this may make the process below easier.
+</p>
+
 <h3>Setting up</h3>
 
 <p>
@@ -38,14 +42,20 @@
 </p>
 
 <p>
+    Click on the run/debug tab.
+</p>
+
+<img src="../../images/run and debug tab.jpg" width="60">
+
+<p>
     The next step may look a little different depending on whether or not you already have
-    debug launch configs set up for debugging.
+    debug launch configs set up for debugging. 
 </p>
 
 <h3>If there are no launch configs</h3>
 
 <p>
-    Click on the run/debug tab to the left. Click on <b>Run and Debug</b>.
+    Your debug tab should look like the image below. Click on <b>Run and Debug</b>.
 </p>
 
 <img src="../../images/run and debug.PNG" width="300">
@@ -53,17 +63,22 @@
 <h3>If there are already launch configs</h3>
 
 <p> 
-    Click on the run/debug tab to the left. Go to the top and click the scrolldown.
-    Click on 'Add Config (<code>[Name of Workbook]</code>)'.
+    The debug tab will look like the image below, containing other launch options.
+    Go to the top and click the scrolldown.
+    Click on <b>Add Config ([Name of Workbook])</b>.
 </p>
 
-<img src="../../images/add config.png" width="300">
+<p>
+    For this workbook, you would click <b>Add Config (DebuggerTutorial21)</b>.
+</p>
+
+<img src="../../images/add config.png" width="400">
 
 <h3>The steps after should be the same</h3>
 
 <p>
     It will then ask you to select an environment, in which you will just select what 
-    browser you use to open your page, which for this example will be Chrome (It might be <code>Chrome (legacy)</code>). If you didn't install
+    browser you use to open your page, which for this example will be <b>Chrome</b> (It might be <b>Chrome (legacy)</b>). If you didn't install
     the Debugger for Chrome, Chrome will not show up as an option.
 </p>
 
@@ -72,7 +87,7 @@
 <p> 
     Now this <code>launch.json</code> file should open up and it can be found in the newly added <code>.vscode</code> folder
     of this workbook. We need to modify the url so that the port matches the one we are using
-    for the live server.
+    for the live server. You can also change the name of the config if you wish, but in this example, we will not do that.
 </p>
 
 <img src="../../images/change port.jpg" width="650">
@@ -82,15 +97,39 @@
 </p>
 
 <p>
-    <b>Note:</b> we only have to do this once per folder. If you open up a folder that you already set up the debugger for,
-    the launch settings will be saved in <code>launch.json</code> in the <code>.vscode</code> folder. This effects the entire folder, you don't
+    <b>If instead, it never asked you to select an environment</b> and took you straight to the <code>launch.json</code> asking you to select a config
+    like in the image below,
+</p>
+
+<img src="../../images/add additonal config.png" width="500">
+
+<p>
+    that means you already have a config for the folder and a <code>launch.json</code> file. You should delete the <code>launch.json</code> 
+    file the follow the steps above starting from after getting the Debugger for Chrome. There are other ways to handle this, but for
+    those who are new to this, this would be the simplest way to handle this.
+</p>
+
+<p>
+    <b>Note:</b> we only have to do this once per project folder. If you open up a project that you already set up the debugger for,
+    the launch settings will have been saved in <code>launch.json</code> in the <code>.vscode</code> folder in. This effects the entire folder, you don't
     have to worry about doing this for each individual file.
 </p>
 
 <h3>Running the debugger</h3>
 
 <p>
-    Now try running the debugger. It can only run when the live server is open.
+    The new launch config should now show up when you click the dropdown. It should show as:
+</p>
+
+<p>
+    <b>Launch Chrome against localhost (DebuggerTutorial21)</b>.
+</p>
+
+<img src="../../images/new config.png" width="400">
+
+<p>
+    Select this and try running the debugger. It can only run when the live server is open. 
+    Make sure you have the correct debugger config selected as shown before.
     You can run the debugger by clicking the arrow next to your launch tab.
 </p>
 
@@ -106,10 +145,15 @@
 <h2>Box (Exercise): First breakpoints</h2>
 
 <p>
+    First, we will need to go to this page in the debugger window.
+</p>
+
+<p>
     Now lets set some breakpoints. Below is a canvas with four squares. 
     The javascript for this can be found in <code>1-1.js</code>. You will see that there are
-    four functions and each gets called to draw a square. To the left of the line
-    number for any line, you can click to add a breakpoint, or click again to remove it.
+    four functions and each gets called to draw a square. When your mouse
+    hover overs the line numbers, a semi-transparent red circle will appear to the left. Clicking
+    on that circle sets/removes breakpoints.
 </p>
 
 <p>
@@ -119,8 +163,7 @@
 <img src="../../images/breakpoints.png" width="650">
 
 <p>
-    In the new debugger window, go to this page. It should be paused in the debugger bar in VS Code.
-    <b>If you were already on this page, refresh it so that the breakpoints activate.</b>
+    Refresh this page after you have added the breakpoints. If you weren't already on this page, go to it.
     If you set the breakpoints correctly, you will see that the canvas is empty. You can click on 'continue'
     in the debugger bar to go to the next breakpoint. You will notice
     that each square will appear as you continue as the code is paused at each breakpoint.
@@ -156,6 +199,25 @@
     occur in things like mouse events or animation loops where functions may get called again after time has passed, and if you
     placed a breakpoint in those repeated functions before it gets called, it will pause when it does. 
     We can see this later in section 4's exercise.
+</p>
+
+<h3>Why are my breakpoints greyed out?</h3>
+
+<p>
+    Below is an image of what breakpoints look like when they are greyed out.
+</p>
+
+<img src="../../images/grey breakpoints.PNG" width="650">
+
+<p>
+    This simply means that the code area is not being loaded, (I.E. the page containing the Code
+    is not the currently visited page). They will turn red when you go to the page containing the code with the breakpoints.
+</p>
+
+<p>
+    This could also mean you are debuggin in the wrong launch config or have some kind of issue with the config. 
+    If you are having issues with the config, the simplest thing to do would be to the delete 
+    the <code>.vscode</code> folder in your project and redo the steps above on this page to create the config.
 </p>
 
 <h3>Too many windows?</h3>
