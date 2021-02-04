@@ -63,7 +63,7 @@
     style="overflow:hidden;height:100%;width:100%;border: 2px solid gray;border-radius: 5px;"></iframe>
 
 <p>
-    What you should see at first is an empty canvas. If we step over, we will get a pink square and if we step over against, we will get the green square.
+    What you should see at first is an empty canvas. If we step over, we will get a pink square and if we step over again, we will get the green square.
     You will notice that the debugger simply goes to the next line of code regardless what happens in the function.
 </p>
 
@@ -77,7 +77,7 @@
 <p>
     Lets restart and step into <code>func3()</code> again. This time step out as soon as we get into <code>func3()</code>. You will see that it immediately
     completes the function and goes back into <code>func1()</code> and draw the blue square. If we were to have stepped out after immediately entering <code>func1()</code>,
-    we will not see the blue square because the pink square is also immedately drawn after. Essentially, step out finishes the current function and continues
+    we would not have seen the blue square because the pink square is also immedately drawn after. Essentially, step out finishes the current function and continues
     to the next line after the function call.
 </p>
 
